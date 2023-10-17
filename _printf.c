@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 			default:
 				_printf("Unknown format specifier %%%c\n", *format);
 				return (-1);
+				break;
 			}
 
 		}
