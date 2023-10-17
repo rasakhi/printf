@@ -28,7 +28,13 @@ int _printf(const char *format, ...)
 			case 'd': case 'i':
 				handle_d(buffer, &buff_count, args);
 				break;
+			case '\0':
+				break;
+			default:
+				_printf("Unknown format specifier %%%c\n", *format);
+				return (-1);
 			}
+
 		}
 		else
 		{
