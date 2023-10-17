@@ -13,8 +13,13 @@ void handle_c_s_mod(char buffer[], int *buff_count, va_list args, char format)
 	if (format == 'c')
 		buffer[(*buff_count)++] = (char)va_arg(args, int);
 	else if (format == 's')
-		for (str = va_arg(args, char *); *str; str++)
-			buffer[(*buff_count)++] = *str;
+	{
+	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (; *str; str++)
+		buffer[(*buff_count)++] = *str;
+	}
 	else if (format == '%')
 		buffer[(*buff_count)++] = '%';
 }
