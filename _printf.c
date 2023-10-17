@@ -31,9 +31,8 @@ int _printf(const char *format, ...)
 			case '\0':
 				break;
 			default:
-				_printf("Unknown format specifier %%%c\n", *format);
+				_printf("Unknown specifier %%%c\n", *format);
 				return (-1);
-				break;
 			}
 
 		}
